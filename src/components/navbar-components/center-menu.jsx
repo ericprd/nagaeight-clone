@@ -1,5 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../context/global-context";
+import {
+  centerMenuDesktopStyle,
+  centerMenuMobileStyle,
+  centerMenuStyle,
+} from "../../styles/navbar-style";
 
 export default function CenterMenu() {
   const { isActive, setIsActive } = useContext(GlobalContext);
@@ -16,38 +22,54 @@ export default function CenterMenu() {
     function handleWindowResize() {
       setScreenWidth(getWidthWindow());
     }
+
+    // get width window
+
     window.addEventListener("resize", handleWindowResize);
+
     if (screenWidth >= 768) setIsActive(false);
+
     return window.addEventListener("resize", handleWindowResize);
-  }, [screenWidth]);
+  }, [screenWidth, setIsActive]);
 
-  const desktopStyle =
-    "gap-5 font-semibold items-center -translate-x-10 hidden md:flex text-[#A72B2A] transition-['opacity, visibility'] duration-300 ease-in-out ";
-
-  const mobileStyle =
-    "flex flex-col gap-6 justify-start pt-24 items-center absolute normal-case text-white text-xl top-[54px] left-0 right-0 bottom-0 h-[calc(100vh-54px)] -z-10 bg-black/90 md:hidden transition-['opacity, visibility'] duration-300 ease-in-out normal-case ";
+  const width = screenWidth < 768;
 
   return (
-    <ul
+    <div
       className={
-        screenWidth < 768
+        width
           ? isActive
-            ? mobileStyle + "visible opacity-100"
-            : mobileStyle + "opacity-0 invisible"
-          : desktopStyle
+            ? centerMenuMobileStyle + "visible opacity-100 z-10"
+            : centerMenuMobileStyle + "opacity-0 invisible"
+          : ""
       }>
-      <li>
-        <a href='#'>About</a>
-      </li>
-      <li>
-        <a href='#'>Menu</a>
-      </li>
-      <li>
-        <a href='#'>Reservation</a>
-      </li>
-      <li>
-        <a href='#'>Contact</a>
-      </li>
-    </ul>
+      <ul
+        className={
+          isActive
+            ? "absolute right-0 left-0 bottom-0 top-[40%] w-auto -translate-y-1/2"
+            : centerMenuDesktopStyle
+        }>
+        <li>
+          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+            Menu
+          </a>
+        </li>
+        <li>
+          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+            Reservation
+          </a>
+        </li>
+        <li>
+          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 }
