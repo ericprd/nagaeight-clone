@@ -7,6 +7,9 @@ module.exports = {
         container: "calc(100% - 44px",
       },
     },
+    screens: {
+      tablet: "850px",
+    },
   },
   plugins: [],
 };

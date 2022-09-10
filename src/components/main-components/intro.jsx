@@ -1,15 +1,10 @@
-import {
-  backgroundStyle,
-  introVideoStyle,
-  sectionStyle,
-} from "../../styles/main-style";
+import { introVideoStyle } from "../../styles/main-style";
 
 export default function Intro() {
   return (
-    <section className={sectionStyle}>
-      <div className={backgroundStyle}></div>
+    <>
       <video
-        className={`hidden md:block ${introVideoStyle}`}
+        className={`hidden tablet:block ${introVideoStyle}`}
         autoPlay
         muted
         loop
@@ -24,7 +19,7 @@ export default function Intro() {
         />
       </video>
       <video
-        className={`md:hidden mx-auto z-[3] ${introVideoStyle}`}
+        className={`tablet:hidden mx-auto z-[3] ${introVideoStyle}`}
         autoPlay
         muted
         loop
@@ -38,6 +33,6 @@ export default function Intro() {
           type='video/webm'
         />
       </video>
-    </section>
+    </>
   );
 }
