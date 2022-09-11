@@ -8,7 +8,10 @@ module.exports = {
       },
     },
     screens: {
+      small: "768px",
       tablet: "850px",
+      middle: "800px",
+      desktop: "1024px",
     },
   },
   plugins: [],

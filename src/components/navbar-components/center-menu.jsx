@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/global-context";
 import {
@@ -40,7 +41,7 @@ export default function CenterMenu() {
       className={
         width
           ? isActive
-            ? centerMenuMobileStyle + "visible opacity-100 z-[1000]"
+            ? centerMenuMobileStyle + "visible opacity-100"
             : centerMenuMobileStyle + "opacity-0 invisible"
           : ""
       }>
@@ -51,9 +52,9 @@ export default function CenterMenu() {
             : centerMenuDesktopStyle
         }>
         <li className='group relative'>
-          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+          <Link to='/' className={width ? isActive && centerMenuStyle : ""}>
             About
-          </a>
+          </Link>
           <div
             className={
               screenWidth >= 850 &&
@@ -61,9 +62,9 @@ export default function CenterMenu() {
             }></div>
         </li>
         <li className='group relative'>
-          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+          <Link to='/menu' className={width ? isActive && centerMenuStyle : ""}>
             Menu
-          </a>
+          </Link>
           <div
             className={
               screenWidth >= 850 &&
@@ -71,9 +72,11 @@ export default function CenterMenu() {
             }></div>
         </li>
         <li className='group relative'>
-          <a href='#' className={width ? isActive && centerMenuStyle : ""}>
+          <Link
+            to='/reservation'
+            className={width ? isActive && centerMenuStyle : ""}>
             Reservation
-          </a>
+          </Link>
           <div
             className={
               screenWidth >= 850 &&

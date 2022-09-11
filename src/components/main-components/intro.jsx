@@ -33,7 +33,7 @@ export default function Intro() {
           type='video/webm'
         />
       </video>
-      <span className='text-white absolute bottom-14 text-center z-[1000] inline-block w-full'>
+      <span className='text-white absolute bottom-14 text-center z-[100] inline-block w-full'>
         <svg
           version='1.1'
           xmlns='http://www.w3.org/2000/svg'

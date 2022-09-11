@@ -1,5 +1,5 @@
 export const sectionStyle =
-  "overflow-hidden relative h-[calc(100vh-69px)] lg:h-[calc(100vh-97px)] lg:min-h-[calc(100vh-97px)]";
+  "overflow-hidden relative h-[calc(100vh-69px)] desktop:min-h-[calc(100vh-97px)]";
 
 export const backgroundStyle =
   "absolute -top-[50px] right-0 bottom-0 left-0 bg-black -z-1 overflow-hidden";

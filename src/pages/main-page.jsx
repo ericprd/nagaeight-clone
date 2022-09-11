@@ -11,7 +11,7 @@ import OurMenusBackground from "../components/main-components/our-menus-backgrou
 import Section from "../components/section";
 import { rightPos } from "../styles/article-style";
 
-export default function Main() {
+export default function MainPages() {
   return (
     <main className='min-h-[100vh] pt-[54px] pb-[15px] lg:pt-[75px] lg:pb-[22px]'>
       <canvas className='w-[calc(100%-44px)] h-[calc(100vh-97px)] fixed top-[75px] left-[22px]'></canvas>
@@ -48,7 +48,7 @@ export default function Main() {
         </Section>
 
         <Section>
-          <div className="bg-[url('https://nagaeight.com/themes/nagaeight/assets/img/home/discover_section2.jpg')] absolute top-0 left-0 right-0 bottom-0 w-[200%] -z-10 bg-cover origin-[50%] scale-100"></div>
+          <div className="bg-[url('https://nagaeight.com/themes/nagaeight/assets/img/home/discover_section2.jpg')] absolute top-0 left-0 right-0 bottom-0 w-[200%] -z-[10] bg-cover origin-[50%] scale-100 "></div>
           <Menu />
         </Section>
       </div>
